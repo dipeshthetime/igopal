@@ -19,6 +19,8 @@
   <b>Notes:</b>
   <%= @achievement.notes %>
 </p>
+<!-- a preview of what was uploaded here -->
+<%= image_tag @achievement.work.url %>
 
 
 <%= link_to 'Edit', edit_achievement_path(@achievement) %> |

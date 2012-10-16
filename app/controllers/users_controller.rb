@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 def create
   @user = User.create( params[:user] )
 end
-
+#added this for paperclip^
   
   def index
     @users = User.all

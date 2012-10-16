@@ -3,7 +3,7 @@ class AchievementsController < ApplicationController
   # GET /achievements.json
   def create
     @achievement = Achievement.create( params[:achievement] )
-end
+  end
   def index
     @achievements = Achievement.all
 

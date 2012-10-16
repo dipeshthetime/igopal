@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<!-- <p>
   <b>User:</b>
   <%= @organization.user %>
-</p>
+</p> -->
 
 <p>
   <b>Name:</b>
@@ -34,7 +34,13 @@
   <b>Url:</b>
   <%= @organization.url %>
 </p>
+<p>
+  <%= image_tag @organization.logo.url %>
+</p>
 
+<p>
+    <%= image_tag @organization.cover.url %>
+</p>
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>
