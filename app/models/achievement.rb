@@ -1,8 +1,8 @@
 class Achievement < ActiveRecord::Base
-  attr_accessible :end_date, :headline, :notes, :start_date, :work
-
-  attr_accessible :work_attributes
-has_attached_file :work,
+  belongs_to :portfolio
+  has_one :user, :through => :portfolio
+  attr_accessible :end_date, :headline, :notes, :start_date, :work, :work_file_name, :work_content_type, :work_file_size, :work_updated_at
+  has_attached_file :work,
                     :styles => lambda{ |a|
                                   ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
                                   :thumb=> "100x100#",

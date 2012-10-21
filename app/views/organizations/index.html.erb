@@ -8,21 +8,23 @@
     <th>City</th>
     <th>State</th>
     <th>Zip</th>
-    <th>Url</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>URL</th>
+    <th>Logo</th>
+    <th>Cover</th>
+
   </tr>
 
 <% @organizations.each do |organization| %>
   <tr>
-<!--     <td><%= organization.user %></td> -->
+    <td><%= organization.user_id %></td>
     <td><%= organization.name %></td>
     <td><%= organization.address %></td>
     <td><%= organization.city %></td>
     <td><%= organization.state %></td>
     <td><%= organization.zip %></td>
     <td><%= organization.url %></td>
+    <td><%= organization.logo.url %></td>
+    <td><%= organization.cover.url %></td>
     <td><%= link_to 'Show', organization %></td>
     <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
     <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,3 +35,6 @@
 <br />
 
 <%= link_to 'New Organization', new_organization_path %>
+
+
+

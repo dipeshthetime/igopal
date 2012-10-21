@@ -1,46 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<!-- <p>
-  <b>User:</b>
-  <%= @organization.user %>
-</p> -->
+<p>
+  <b>References:</b>
+  <%= @organization.user_id %>
+</p>
 
 <p>
-  <b>Name:</b>
+  <b>:</b>
   <%= @organization.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>String:</b>
   <%= @organization.address %>
 </p>
 
 <p>
-  <b>City:</b>
+  <b>:</b>
   <%= @organization.city %>
 </p>
 
 <p>
-  <b>State:</b>
+  <b>String:</b>
   <%= @organization.state %>
 </p>
 
 <p>
-  <b>Zip:</b>
+  <b>:</b>
   <%= @organization.zip %>
 </p>
 
 <p>
-  <b>Url:</b>
+  <b>{}:</b>
   <%= @organization.url %>
-</p>
-<p>
-  <%= image_tag @organization.logo.url %>
 </p>
 
 <p>
-    <%= image_tag @organization.cover.url %>
+  <b>:</b>
+  <%= image_tag @organization.logo %>
 </p>
+
+<p>
+  <b>Url:</b>
+  <%= image_tag @organization.cover %>
+</p>
+
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>

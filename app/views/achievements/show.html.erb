@@ -20,7 +20,7 @@
   <%= @achievement.notes %>
 </p>
 <!-- a preview of what was uploaded here -->
-<%= image_tag @achievement.work.url %>
+<%= image_tag @achievement.work.url(:thumb) %>
 
 
 <%= link_to 'Edit', edit_achievement_path(@achievement) %> |

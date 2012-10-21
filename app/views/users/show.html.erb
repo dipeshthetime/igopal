@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
-<%= image_tag @user.avatar.url %>
-<%= image_tag @user.avatar.url(:medium) %>
+
 <%= image_tag @user.avatar.url(:thumb) %>
 <p>
   <b>Login name:</b>
@@ -21,7 +20,19 @@
   <b>Last name:</b>
   <%= @user.last_name %>
 </p>
+<p>
+  <b>Portfolio:</b>
+  <%= link_to @user.portfolio %>
+</p>
+<p>
+<table>
+ <th><b>Achievements:</b><th>
 
+
+
+
+</table>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

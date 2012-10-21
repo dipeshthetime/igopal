@@ -1,19 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user: 
-  name: 
-  address: 
-  city: 
-  state: 
-  zip: 
+  references: MyString
+  : 
+  string: MyString
+  : 
+  string: MyString
+  : 
+  {}: MyString
+  : 
   url: MyString
 
 two:
-  user: 
-  name: 
-  address: 
-  city: 
-  state: 
-  zip: 
+  references: MyString
+  : 
+  string: MyString
+  : 
+  string: MyString
+  : 
+  {}: MyString
+  : 
   url: MyString

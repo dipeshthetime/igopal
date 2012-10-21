@@ -13,4 +13,3 @@ class CreateOrganizations < ActiveRecord::Migration
     end
   end
 end
-rails generate paperclip organization cover

@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007195350) do
+ActiveRecord::Schema.define(:version => 20121021054710) do
 
   create_table "achievements", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "portfolio_id"
     t.string   "headline"
     t.date     "start_date"
     t.date     "end_date"
@@ -37,14 +37,26 @@ ActiveRecord::Schema.define(:version => 20121007195350) do
     t.string   "url"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.string   "logo_file_name"
-    t.string   "logo_content_type"
-    t.integer  "logo_file_size"
-    t.datetime "logo_updated_at"
     t.string   "cover_file_name"
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
+
+  create_table "portfolios", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "achievements_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "title"
+    t.string   "variety"
+    t.date     "start_date"
+    t.string   "intro"
+    t.string   "unknown"
   end
 
   create_table "users", :force => true do |t|

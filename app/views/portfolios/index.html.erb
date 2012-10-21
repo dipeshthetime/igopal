@@ -1,0 +1,33 @@
+<h1>Listing portfolios</h1>
+
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Portfolio Title</th>
+    <th>Type</th>
+    <th>Start Date</th>
+    <th>Introduction</th>
+    <th>Unknown Field</th>
+  </tr>
+
+<% @portfolios.each do |portfolio| %>
+  <tr>
+    <td><%= portfolio.user_id %></td>
+    <td><%= portfolio.title %></td>
+      <td><%= portfolio.variety %></td>   
+      <td><%= portfolio.start_date %></td>    
+      <td><%= portfolio.intro %></td>
+      <td><%= portfolio.unknown %></td>
+    <td><%= link_to 'Show', portfolio %></td>
+    <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
+    <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Portfolio', new_portfolio_path %>
+
+
+  

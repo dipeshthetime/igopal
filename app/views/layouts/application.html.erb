@@ -6,10 +6,11 @@
   <%= javascript_include_tag "jquery-1.8.2.min" "storyjs-embed","timeline", "bootstrap", "application" %>
 
 </head>
-<body background-color = "#005580">
+<body >
 
-    <div class="navbar" class = "navbar-static-top" class="container" class="navbar-inverse">
-	    <div class="navbar-inner">
+    <div class="navbar navbar-inverse" class = "navbar-static-top" class="container" >
+	    <div class="navbar-inner" class = "navbar-inverse">
+	    <div class="container">
 	    <a class="brand" href="#">igopal</a>
 		<ul class="nav">
 			<li class ="active" clas = "nav"><a><%=link_to "All Users", users_path%></a>
@@ -18,13 +19,15 @@
 			</li>
 
 		</ul>
+	</div>
 	    </div>
     </div>
 
 
-
+<div class= "container-fluid">
 
 <%= yield %>
 
+</div>
 </body>
 </html>
