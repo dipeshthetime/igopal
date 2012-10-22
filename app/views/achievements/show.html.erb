@@ -4,7 +4,8 @@
   <b>Headline:</b>
   <%= @achievement.headline %>
 </p>
-
+<!-- a preview of what was uploaded here -->
+<p><%= image_tag @achievement.work.url(:small) %></p>
 <p>
   <b>Start date:</b>
   <%= @achievement.start_date %>
@@ -12,16 +13,15 @@
 
 <p>
   <b>End date:</b>
-  <%= @achievement.end_date %>
+	<%= @achievement.end_date %>
 </p>
 
 <p>
-  <b>Notes:</b>
-  <%= @achievement.notes %>
-</p>
+  <b>Notes:</b><%= @achievement.notes %></p>
 <!-- a preview of what was uploaded here -->
-<%= image_tag @achievement.work.url(:thumb) %>
 
-
-<%= link_to 'Edit', edit_achievement_path(@achievement) %> |
+<p><%= @achievement.as_json %>/>
+<p>
+<%= link_to 'Edit', edit_achievement_path(@achievement) %> 
 <%= link_to 'Back', achievements_path %>
+

@@ -23,8 +23,8 @@
     <td><%= organization.state %></td>
     <td><%= organization.zip %></td>
     <td><%= organization.url %></td>
-    <td><%= organization.logo.url %></td>
-    <td><%= organization.cover.url %></td>
+    <td><%= image_tag organization.logo.url(:tiny) %></td>
+    <td><%= image_tag organization.cover.url(:tiny) %></td>
     <td><%= link_to 'Show', organization %></td>
     <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
     <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,4 @@
-
-<div id="my-timeline"><h1><%= %>@Username Portfolio</h1></div>
+<div id="my-timeline"><h1>Portfolio</h1></div>
 <h3>Listing achievements</h3>
 
 <% @achievements.each do |achievement| %>
@@ -24,6 +23,8 @@
     </div>
   </div>
 <% end %>
+<p>Rendered JSON for the table:</p>
+<p><%= @achievements.as_json %></p>
 
 
 

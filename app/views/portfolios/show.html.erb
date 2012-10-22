@@ -1,10 +1,26 @@
+<div id="my-timeline"><h1><%= @portfolio.title %> </h1></div>
+
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>:achievement</b>
-
+<p><b>Featured Image:</b></br>
+	<%= image_tag @portfolio.feature_image.url %>
+</p> 
+<p><b>User Id:<b/>
+	<%= @portfolio.user_id %>
 </p>
+<p><b>Portfolio Title:</b>
+	<%= @portfolio.title %>
+</p>
+<p><Portfolio Start Date:
+	<%= @portfolio.start_date %>
+</p>
+<p>Style: (default)</br>
+	<%= @portfolio.variety %>
+</p>
+<p>Introduction:  
+<%= @portfolio.intro %></p>
 
+<p>Rendered JSON:</p></br>
+<p><%= @portfolio.as_json %></p>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %>

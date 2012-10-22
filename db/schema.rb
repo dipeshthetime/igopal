@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021054710) do
+ActiveRecord::Schema.define(:version => 20121022143525) do
 
   create_table "achievements", :force => true do |t|
     t.integer  "portfolio_id"
@@ -49,14 +49,16 @@ ActiveRecord::Schema.define(:version => 20121021054710) do
 
   create_table "portfolios", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "achievements_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "title"
     t.string   "variety"
     t.date     "start_date"
     t.string   "intro"
-    t.string   "unknown"
+    t.string   "feature_image_file_name"
+    t.string   "feature_image_content_type"
+    t.integer  "feature_image_file_size"
+    t.datetime "feature_image_updated_at"
   end
 
   create_table "users", :force => true do |t|

@@ -6,6 +6,7 @@ class Achievement < ActiveRecord::Base
   has_attached_file :work,
                     :styles => lambda{ |a|
                                   ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
+                                  :tiny=> "30x30",
                                   :thumb=> "100x100#",
                                   :small  => "150x150>",
                                   :medium => "300x300>",
