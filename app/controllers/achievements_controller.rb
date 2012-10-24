@@ -4,11 +4,7 @@ class AchievementsController < ApplicationController
   def create
     @achievement = Achievement.create( params[:achievement] )
   end
-def start_date_select
-  date_select(start_date, :prompt, :order[:month, :day, :year])
-end
 
-  
   def index
     @achievements = Achievement.all
 
