@@ -1,12 +1,17 @@
 class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
+
+
+  def create
+  @portfolio = Portfolio.create( params[:portfolio] )
+end
   def index
     @portfolios = Portfolio.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @portfolios }
+      format.json { render json: @portfolios.as_json(:include => :achievements, :except => :created_at) }
     end
   end
 
