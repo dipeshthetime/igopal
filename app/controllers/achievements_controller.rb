@@ -1,6 +1,9 @@
 class AchievementsController < ApplicationController
   # GET /achievements
   # GET /achievements.json
+  
+
+
   def create
     @achievement = Achievement.create( params[:achievement] )
   end

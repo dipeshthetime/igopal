@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Igopal</title>
+  <title>iGopal</title>
   <%= stylesheet_link_tag  "application", "bootstrap", :media => "all" %>
   <%= javascript_include_tag "jquery-1.8.2.min" "storyjs-embed","timeline", "bootstrap", "application" %>
 
 </head>
 <body >
-
+	
+	   <p class="notice"><%= notice %></p
+       <p class="alert"><%= alert %></p>
     <div class="navbar navbar-inverse" class = "navbar-static-top" class="container" >
 	    <div class="navbar-inner" class = "navbar-inverse">
 	    <div class="container">
-	    <a class="brand" href="#">igopal</a>
+	    <a class="brand" href="#">iGopal</a>
 		<ul class="nav">
 			<li class ="active" clas = "nav"><a><%=link_to "All Users", users_path%></a>
 			</li>
 			<li class="active" class = "nav"><a><%=link_to "All Achievements", achievements_path%></a>
 			</li>
-
 		</ul>
+<div id="user_nav" style="text-align: right";>
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  <% end %>
+</div>
 	</div>
 	    </div>
     </div>
