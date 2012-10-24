@@ -7,7 +7,9 @@
 
 </head>
 <body >
-
+	
+	   <p class="notice"><%= notice %></p
+       <p class="alert"><%= alert %></p>
     <div class="navbar navbar-inverse" class = "navbar-static-top" class="container" >
 	    <div class="navbar-inner" class = "navbar-inverse">
 	    <div class="container">
@@ -17,8 +19,15 @@
 			</li>
 			<li class="active" class = "nav"><a><%=link_to "All Achievements", achievements_path%></a>
 			</li>
-
 		</ul>
+<div id="user_nav" style="text-align: right";>
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+  <% end %>
+</div>
 	</div>
 	    </div>
     </div>
