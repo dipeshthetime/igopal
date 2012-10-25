@@ -4,12 +4,11 @@
 <p><b>Featured Image:</b></br>
 	<%= image_tag @portfolio.feature_image.url(:small) %>
 </p> 
-User Name
+<p><b>User Name: </b>
 <% if user_signed_in? %>
 <h4><%= current_user.first_name %> <%= current_user.last_name %>
 </h4>	  
 <% end %>
-	<%= @portfolio.user_id %>
 </p>
 <p><b>Portfolio Title:</b>
 	<%= @portfolio.title %>
@@ -17,14 +16,11 @@ User Name
 <p><Portfolio Start Date:
 	<%= @portfolio.start_date %>
 </p>
-<p>Style: (default)</br>
+<!-- <p>Style: (default)</br>
 	<%= @portfolio.variety %>
-</p>
+</p> -->
 <p>Introduction:  
 <%= @portfolio.intro %></p>
-
-<p>Rendered JSON:</p></br>
-<p><%= @portfolio.as_json %></p>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %>
