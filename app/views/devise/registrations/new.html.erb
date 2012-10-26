@@ -19,12 +19,19 @@
     <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
-  </div>
+  </div> 
   <div class="field">
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name %>
-  </div>
-    <%= f.file_field :avatar %>
+  </div>  
+  
+  <div class="field">
+    <%= f.radio_button :role, "student" %> Student<br/>
+    <%= f.radio_button :role, "organization" %> Organization
+ </div>  
+
+
+  <%= f.file_field :avatar %>
   <div class="actions">
 
   <div><%= f.submit "Sign up" %></div>

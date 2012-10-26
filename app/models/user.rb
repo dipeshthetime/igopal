@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :achievments, :through => :portfolio 
   validates_presence_of :email, :first_name, :last_name, :login_name
   #has_one :organization
-  attr_accessible :email, :first_name, :last_name, :login_name, :avatar
+  attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
   has_attached_file :avatar,                       
   						:styles => lambda{ |a|
                                   ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
