@@ -1,7 +1,14 @@
 Igopal::Application.routes.draw do
+  get "home/index"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
+
+  authenticated :user do
+    root :to => 'home#index'
+  end
+  root :to => "home#index"
 
   devise_for :users
 
@@ -16,16 +23,10 @@ Igopal::Application.routes.draw do
 
   resources :users
 
-  resources :works
-
-
-
-
-  get "home/index"
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
-  root :to=> "home#index"
+ 
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

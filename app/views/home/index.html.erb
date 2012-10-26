@@ -1,11 +1,6 @@
-<h1>iGopal</h1>
 
 <% if user_signed_in? %>
-<h4>Welcome to your dashboard, <%= current_user.first_name %> <%= current_user.last_name %>
-</h4>	  
+<h4>Dashboard: <%= current_user.first_name %> <%= current_user.last_name %><br />
+	<img src = "<%= current_user.avatar %>" width="125" height="125" >
+</h4>
 <% end %>
-
-
-
-<p>This will be our landing page.</p>
-
