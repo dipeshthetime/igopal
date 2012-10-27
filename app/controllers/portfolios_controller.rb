@@ -3,7 +3,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios.json
 
 
-  def create
+def create
   @portfolio = Portfolio.create( params[:portfolio] )
 end
   def index
@@ -11,15 +11,14 @@ end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @portfolios.as_json(:include => :achievements, :except => :created_at) }
+      format.json {render json: @portfolios.as_json(:include => :achievements, :except => :created_at) }
     end
   end
 
   # GET /portfolios/1
   # GET /portfolios/1.json
   def show
-    @portfolio = Portfolio.find(params[:id])
-
+    @portfolio = Portfolio.find(params[:id, :achievements])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @portfolio }

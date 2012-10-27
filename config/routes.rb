@@ -13,8 +13,16 @@ Igopal::Application.routes.draw do
     end
 
   resources :achievements
-
-  resources :users
+# I added this to tie dependent resources together.  
+# Not sure if this is correct
+  resources :users do
+    resource :portfolio do
+      resource :feature_image
+      resources :achievements do
+        resource :work
+      end
+    end
+  end
 
   resources :works
 

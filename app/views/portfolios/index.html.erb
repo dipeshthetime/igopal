@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>User ID</th>
+    <th>User Name</th>
     <th>Portfolio Title</th>
     <th>Type</th>
     <th>Start Date</th>
@@ -12,7 +12,7 @@
 
 <% @portfolios.each do |portfolio| %>
   <tr>
-    <td><%= portfolio.user_id %></td>
+    <td><%= current_user.first_name %> <%= current_user.last_name %></td>
     <td><%= portfolio.title %></td>
       <td><%= portfolio.variety %></td>   
       <td><%= portfolio.start_date %></td>    
