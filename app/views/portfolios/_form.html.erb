@@ -10,27 +10,31 @@
       </ul>
     </div>
   <% end %>
-
-
+<div>
+ <h3> <%= current_user.first_name%>, please create your new porfolio...</h3>
+<p>Here you will enter the information to be displayed at at the beginning of your portfolio presentaiton, consider this the introduction to your work. </p>
+<div>
+  </div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
     <div class="field">
-    <%= f.label :start_date %><br />
+    <%= f.label :start_date %>The date you would like the timeline to begin.<br />
     <%= f.date_select :start_date %>
   </div>
-    <div class="field">
+    <div class="hidden">
     <%= f.label :variety %><br />
     <%= f.text_field :variety %>
   </div>
   <div class="field">
-    <%= f.label :introduction %><br />
+    <%= f.label :introduction %>Enter a brief description of the work to follow or yourself.<br />
     <%= f.text_field :intro %>
   </div>
     <div class="field">
-    <%= f.label :feature_image %><br />
-    <%= f.file_field :feature_image %>
+    <%= f.label :feature_image %>Upload an image which represents your portfolio.<br />
+    <%= f.file_field :image %>
   </div>
 
   <div class="actions">

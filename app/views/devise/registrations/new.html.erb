@@ -1,33 +1,14 @@
 <h2>Sign up</h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-  
-    <div class="field">
-    <%= f.label :login_name %><br />
-    <%= f.text_field :login_name %>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-  
-    <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-    <%= f.file_field :avatar %>
-  <div class="actions">
-
-  <div><%= f.submit "Sign up" %></div>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :login_name, :autofocus => true %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %> 
+  <%= f.input :email, :required => true %>
+  <%= f.input :password, :required => true %>
+  <%= f.input :password_confirmation, :required => true %>
+  <%= f.file_field :avatar %><br/>
+  <p></p>
+  <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
 <% end %>
-
 <%= render "devise/shared/links" %>

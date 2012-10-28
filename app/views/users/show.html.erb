@@ -8,7 +8,7 @@
 
 <p>
   <b>Email:</b>
-  <%= email_field(:user, :email) %>
+  <%=@user.email %>
 </p>
 
 <p>
@@ -20,11 +20,14 @@
   <b>Last name:</b>
   <%= @user.last_name %>
 </p>
+<!-- Will hide ID later!! -->
+<p>
+  <b>User ID:</b>
+  <%= @user.id %>
+</p>
 
 <p>
-<table>
- <th><b>Achievements:</b><th>
-</table>
+<%= link_to "User's Portfolio"%>                                    
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

@@ -1,11 +1,12 @@
 class Portfolio < ActiveRecord::Base
-	belongs_to :user
-	has_many :achievements
-	validates_presence_of :title, :start_date, :intro, :feature_image
-  	attr_accessible :achievements, :user_id, :title, :variety, :start_date, :intro, 
-  		:feature_image_file_name, :feature_image_content_type , :feature_image,
-  		:feature_image_file_size, :feature_image_updated_at
-  	has_attached_file :feature_image,
+	belongs_to :user, :inverse_of => :portfolio
+	has_many :achievements, :inverse_of => :portfolio, :uniq => true, :dependent => :destroy
+  after_initialize :init
+	validates_presence_of :title, :start_date, :intro
+  	attr_accessible :id, :achievements, :user_id, :title, :variety, :start_date, :intro, 
+  		:image_file_name, :image_content_type , :image,
+  		:image_file_size, :image_updated_at
+  	has_attached_file :image, :dependent => :destroy,
                       :styles => lambda{ |a|
                                   ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
                                   :tiny=> "30x30",
@@ -15,8 +16,10 @@ class Portfolio < ActiveRecord::Base
                                   :large =>   "500x500>" }: {}
                                  }
 
-
-
+def init
+  self.variety ||='default'
+end
 
 
 end
+ 

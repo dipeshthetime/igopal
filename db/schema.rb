@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024225914) do
+ActiveRecord::Schema.define(:version => 20121028004436) do
 
   create_table "achievements", :force => true do |t|
-    t.integer  "portfolio_id"
     t.string   "headline"
     t.date     "start_date"
     t.date     "end_date"
@@ -25,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20121024225914) do
     t.string   "work_content_type"
     t.integer  "work_file_size"
     t.datetime "work_updated_at"
+    t.integer  "portfolio_id"
   end
 
   create_table "active_admin_comments", :force => true do |t|
@@ -82,17 +82,28 @@ ActiveRecord::Schema.define(:version => 20121024225914) do
 
   create_table "portfolios", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
     t.string   "title"
-    t.string   "variety"
+    t.string   "variety",            :default => "default"
     t.date     "start_date"
     t.string   "intro"
-    t.string   "feature_image_file_name"
-    t.string   "feature_image_content_type"
-    t.integer  "feature_image_file_size"
-    t.datetime "feature_image_updated_at"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
+
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
+  add_index "roles", ["name"], :name => "index_roles_on_name"
 
   create_table "users", :force => true do |t|
     t.string   "login_name"
@@ -118,5 +129,12 @@ ActiveRecord::Schema.define(:version => 20121024225914) do
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "users_roles", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
+
+  add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
 
 end

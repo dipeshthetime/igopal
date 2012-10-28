@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -6,13 +7,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  has_one :portfolio
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :id
+  has_one :portfolio, :dependent => :destroy, :inverse_of => :user
   has_many :achievments, :through => :portfolio 
   validates_presence_of :email, :first_name, :last_name, :login_name
   #has_one :organization
-  attr_accessible :email, :first_name, :last_name, :login_name, :avatar
-  has_attached_file :avatar,                       
+  attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
+  has_attached_file :avatar,  :dependent => :destroy,                      
   						:styles => lambda{ |a|
                                   ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
                                   :tiny=> "30x30",
@@ -21,4 +22,9 @@ class User < ActiveRecord::Base
                                   :medium => "300x300>",
                                   :large =>   "500x500>" }: {}
                                  }
+after_initialize :init
+def init
+#need to add default avatar
+  self.avatar||= "images/Star.png"
+end
 end

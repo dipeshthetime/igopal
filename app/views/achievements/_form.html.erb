@@ -16,10 +16,12 @@
   </div>
   
   <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. 
+    Signed in as: <%= current_user.email %> with id: <%= current_user.id %>. </br>
+    <!-- Portfolio Id: <%= @portfolio_id %>  -->
   <% end %>
  
   <%= f.hidden_field :notes, :value => current_user.email %>
+  <%= f.hidden_field :portfolio_id, :value => @portfolio_id %>
 
   <div class="field" >
     <%= f.label :start_date %><br />
@@ -29,12 +31,16 @@
     <%= f.label :end_date %><br />
     <%= f.date_select :end_date %>
   </div>
-  
-
-  
+   <div class="field" >
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
  <div class="field">
+  <%= f.label :work_to_upload %>
   <%= f.file_field :work %>
 </div>
+
+
 
   <div class="actions">
     <%= f.submit %>

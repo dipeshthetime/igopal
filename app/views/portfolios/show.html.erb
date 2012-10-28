@@ -1,19 +1,19 @@
-<div id="my-timeline"><h1><%= current_user.first_name %> <%= current_user.last_name %>'s Porfolio </h1></div>
+<div id="my-timeline"><h1><%= current_user.first_name %> <%= current_user.last_name %>'s Portfolio </h1></div>
 
 <p id="notice"><%= notice %></p>
 <p><b>Featured Image:</b></br>
-	<%= image_tag @portfolio.feature_image.url(:small) %>
+	<%= image_tag @portfolio.image.url(:small) %>
 </p> 
 <p><b>User Name: </b>
 <% if user_signed_in? %>
-<h4><%= current_user.first_name %> <%= current_user.last_name %>
+<h4><%= current_user.first_name %> <%= current_user.last_name %> with id of: <%= current_user.id %>
 </h4>	  
 <% end %>
 </p>
 <p><b>Portfolio Title:</b>
 	<%= @portfolio.title %>
 </p>
-<p><Portfolio Start Date:
+<p><Start Date:
 	<%= @portfolio.start_date %>
 </p>
 <!-- <p>Style: (default)</br>
@@ -21,8 +21,10 @@
 </p> -->
 <p>Introduction:  
 <%= @portfolio.intro %></p>
+<p>Portfolio ID:  
+<%= @portfolio.id%></p>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %>
-
+<p><%= link_to 'New Achievement', new_portfolio_achievement_path(@portfolio.id)%></p>
 
