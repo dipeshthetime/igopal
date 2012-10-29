@@ -13,7 +13,7 @@ class AchievementsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @achievements }
+      format.json {render template: "achievements/show.json.rabl"}#{ render json: @achievements }
     end
   end
 
@@ -24,7 +24,7 @@ class AchievementsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @achievement }
+      format.json {render template: "achievements/show.json.rabl"}#{ render json: @achievement }
     end
   end
 

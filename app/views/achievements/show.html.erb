@@ -24,12 +24,12 @@
 	<%= @porfolio_id %>
 </p>
 <p>
-  <b>User:</b>
-	<%= current_user.id %>
+  <b>Created by:</b>
+	<%= @achievement.portfolio_id %>
 </p>
 <!-- <p><%= @achievement.as_json %>/> -->
 <p>
 <%= link_to 'Edit', edit_achievement_path(@achievement) %> | 
-<%= link_to 'Index', achievements_path %> | 
+<%= link_to 'Index', achievements_path %> |
 <%= link_to 'Back', home_index_path %>
 

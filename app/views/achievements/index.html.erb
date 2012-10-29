@@ -2,6 +2,7 @@
 	<%= current_user.first_name %> <%= current_user.last_name %>'s Portfolio
 	  <% end %>
 	</h1></div>
+<%= link_to 'Add a New Achievement', new_achievement_path %>
 <h3>Listing achievements</h3>
 
 <% @achievements.each do |achievement| %>
@@ -10,6 +11,14 @@
     <p><%= achievement.start_date %> to 
     <%= achievement.end_date %></p>
     <em><%= achievement.notes %></em>
+<p>
+  <b>portfolio id:</b>
+  <%= achievement.portfolio_id %>
+</p>
+<p>
+  <b>user info:</b>
+
+</p>
 
 
     <div class="meta">
@@ -22,7 +31,7 @@
     <div class="btn-group">
       <button class="btn">Show</button>
       <button class="btn">Edit</button>
-      <button class="btn">Delete</button>
+      <button class="btn" >Delete</button>
     </div>
       </span>
     </div>

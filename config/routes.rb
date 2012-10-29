@@ -5,26 +5,24 @@ Igopal::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  authenticated :user do
+  authenticated :users do
     root :to => 'home#index'
-    resource :portfolio
+      resources :portfolios do
+        resources :achievements do
+      end
+    end
   end
   root :to => "home#index"
 
   devise_for :users
 
   resources :organizations
-
-  resources :portfolios do
-      resources :achievements
-      resource :user
-    end
-
+  resources :portfolios
   resources :achievements
 # I added this to tie dependent resources together.  
 # Not sure if this is correct
-  resources :users do
-    resource :portfolio do
+  resource :users do
+    resources :portfolios do
       resource :feature_image
       resources :achievements do
         resource :work
@@ -32,7 +30,7 @@ Igopal::Application.routes.draw do
     end
   end
 
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
  

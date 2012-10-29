@@ -1,6 +1,6 @@
 class Portfolio < ActiveRecord::Base
-	belongs_to :user, :inverse_of => :portfolio
-	has_many :achievements, :inverse_of => :portfolio, :uniq => true, :dependent => :destroy
+	belongs_to :user, :inverse_of => :portfolios
+	has_many :achievements, :inverse_of => :portfolios, :uniq => true, :dependent => :destroy
   after_initialize :init
 	validates_presence_of :title, :start_date, :intro
   	attr_accessible :id, :achievements, :user_id, :title, :variety, :start_date, :intro, 

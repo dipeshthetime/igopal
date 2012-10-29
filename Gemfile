@@ -50,3 +50,4 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 
 # To use debugger
 # gem 'debugger'
+gem 'rabl'

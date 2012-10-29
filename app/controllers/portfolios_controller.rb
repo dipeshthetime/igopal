@@ -11,7 +11,7 @@ end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json {render json: @portfolios.as_json(:include => :achievements, :except => :created_at) }
+      format.json {render(template: "portfolios/show.json.rabl")}#json: @portfolios.as_json}(:include => :achievements, :except => :created_at) }
     end
   end
 
@@ -21,7 +21,7 @@ end
     @portfolio = Portfolio.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @portfolio }
+      format.json {render template: "portfolios/show.json.rabl"}#{ render json: @portfolio }
     end
   end
 
