@@ -6,6 +6,9 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     end
+    if user.has_role? :Student
+    	can :read, :achievement
+	end
   end
   
 end

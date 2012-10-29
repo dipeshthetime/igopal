@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  has_merit
+
+    include PublicActivity::Model
+  tracked
+  
   rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
