@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_merit
 
+  has_merit
+
     include PublicActivity::Model
   tracked
   

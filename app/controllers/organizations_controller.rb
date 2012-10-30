@@ -1,9 +1,24 @@
 class OrganizationsController < ApplicationController
+
+
+  before_filter :authenticate_user!
+  before_filter :only_allow_admin, :only => [ :index ]
+
   # GET /organizations
   # GET /organizations.json
   def create
   @organization = Organization.create( params[:organization] )
 end
+
+
+
+
+  def only_allow_admin
+    redirect_to root_path, :alert => 'Not authorized as an administrator.' unless current_user.has_role? :student
+  end
+
+
+
   def index
     @organizations = Organization.all
 
