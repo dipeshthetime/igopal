@@ -1,24 +1,36 @@
-home
-<% if user_signed_in? %>
 
-<h4>Welcome to your dashboard, <%= current_user.first_name %> <%= current_user.last_name %> !
-</h4>	  
-<p>This will be our landing page.</p>
-<p>User ID: <%= current_user.id %>
+<p>LANDING PAGE</p>
 
-<h3><%=link_to "Manage Your Profile"%> </h3>
+<div class="row">
+	<div class="span4">
+		<ul class="thumbnails">
+<li class="span4">
+<div class="thumbnail">
+<img src = "<%= current_user.avatar %>" width="125" height="125" >
+<center><h3><%= current_user.first_name %> <%= current_user.last_name %></h3></center>
+<center><p>User ID: <%= current_user.id %></p></center>
+<center><p>User Role: <%= current_user.role %></p></center>
+</div>
+</li>
+</ul>
+	</div>
+	 <div class="span4">
+     <ul class="nav nav-list">
+    <li class="nav-header">User Options</li>
+    <li class="active"><a href="#">Home</a></li>
+    <li><%= link_to "Create a Timeline Portfolio", new_portfolio_path %> </li>
+    <li><%= link_to "Edit Your Current Portfolio(s)", users_portfolios_path(:user_id => current_user.id) %> </li>
+    <li><%= link_to "Add Achievments to your Current Portfolio",new_achievement_path %> </li>
+    </ul>
+	</div>
 
-<h3><%= link_to "Create a Timeline Portfolio", new_portfolio_path %></h3>
-
-<h3><%= link_to "Edit Your Current Portfolio(s)", users_portfolios_path(:user_id => current_user.id) %></h3>
-
-<h3><%= link_to "Add Achievments to your Current Portfolio",new_achievement_path %></h3>
+<div class="span4">
 
 
 
-=======
-<h4>Dashboard: <%= current_user.first_name %> <%= current_user.last_name %><br />
-	<img src = "<%= current_user.avatar %>" width="125" height="125" >
-</h4>
+</div>
+
+</div>
+
 
 <% end %>

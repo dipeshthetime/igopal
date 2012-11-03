@@ -20,5 +20,8 @@ class Organization < ActiveRecord::Base
                                   :medium => "300x300>",
                                   :large =>   "500x500>" }: {}
                                  }
+
+
+  resourcify
 end
 
