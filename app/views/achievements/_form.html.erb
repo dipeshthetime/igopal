@@ -17,13 +17,12 @@
   
   <% if user_signed_in? %>
     Signed in as: <%= current_user.email %> with id: <%= current_user.id %>. </br>
-    <!-- Portfolio Id: <%= @portfolio_id %>  -->
+    This user's portfolio id is <%= current_user.portfolio.id %>
+    <!-- Portfolio Id: <%= @portfolio_id %>  --> 
   <% end %>
  
   <%= f.hidden_field :notes, :value => current_user.email %>
-
-
-  <%= f.hidden_field :portfolio_id, :value => @portfolio_id %>
+  <%= f.hidden_field :portfolio_id, :value => current_user.portfolio.id %>
 
   <div class="field" >
     <%= f.label :start_date %><br />
@@ -35,7 +34,7 @@
   </div>
    <div class="field" >
     <%= f.label :notes %><br />
-    <%= f.text_field :notes %>
+    <%= f.text_area :notes  %>
   </div>
  <div class="field">
   <%= f.label :work_to_upload %>

@@ -1,4 +1,4 @@
-
+home
 <% if user_signed_in? %>
 
 <h4>Welcome to your dashboard, <%= current_user.first_name %> <%= current_user.last_name %> !
@@ -6,7 +6,7 @@
 <p>This will be our landing page.</p>
 <p>User ID: <%= current_user.id %>
 
-<h3><%=link_to "Manage Your Profile", user_path %> </h3>
+<h3><%=link_to "Manage Your Profile"%> </h3>
 
 <h3><%= link_to "Create a Timeline Portfolio", new_portfolio_path %></h3>
 
