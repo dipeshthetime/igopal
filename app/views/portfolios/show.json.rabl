@@ -1,36 +1,35 @@
-object @portfolios
-node(:timeline){|portfolio|
-(
-		node(:headline){(portfolio.title)}
-		node(:type){(portfolio.variety)}
-		node(:text){(portfolio.intro)}
-		node(:asset){
-			child :image do |image|
-			node(:media){ image.url}
-			node(:credit){}
-			node(:caption){}
-			end
-			}
+## This is the new and improved alias structure for timeline.
+# still needs images added and dates reformatted
 
-		node(:date){|portfolio| (
-			child :achievements do
-				node(:startDate){|achievement| (achievement.start_date)}
-				node(:endDate){|achievement| (achievement.end_date)}
-				node(:headline){|achievement| (achievement.headline)}
-				node(:text){|achievement| (achievement.notes)}
-				node(:asset){|achievement| (
-					child :work do
-					  node(:media){|work|(work.url)}
-					  node(:credit){}
-					  node(:caption){}
-					end)
-
-
-				}
-
+object @portfolio => :timeline
+	attribute :title => :headline
+	attribute :variety => :type 
+	attribute :intro => :text
+	attribute :start_date => :startDate
+	child :image => :asset do
+		attribute :image => :media
+		attribute :credit
+		attribute :caption
+	end
+	child :achievements => :date do
+		attribute :start_date => :startDate
+		attribute :end_date => :endDate
+		attribute :headline
+		attribute :notes=> :text
+		child :work => :asset do
+			attribute :work_file_name => :media
+			attribute :credit
+			attribute :caption
 		end
-	)}
-)}
+	end
+
+
+
+
+
+
+
+
 
 
 

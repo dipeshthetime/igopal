@@ -12,6 +12,7 @@ end
     respond_to do |format|
       format.html # index.html.erb
       format.json {render(template: "portfolios/show.json.rabl")}#json: @portfolios.as_json}(:include => :achievements, :except => :created_at) }
+
     end
   end
 
