@@ -20,7 +20,7 @@ end
   # GET /portfolios/1.json
   def show
     @portfolio = Portfolio.find(params[:id])
-    @achievment = @portfolio.achievements.create(params[:achievement])
+   # @achievement = @portfolio.achievements.create(params[:achievement])
     respond_to do |format|
       format.html  #show.html.erb  
       format.json {render template: "portfolios/show.json.rabl"}#{ render json: @portfolio }
@@ -34,7 +34,7 @@ end
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @portfolio }
+      format.json {render template: "portfolios/show.json.rabl"}
     end
   end
 

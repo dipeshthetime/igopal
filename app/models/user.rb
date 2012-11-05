@@ -30,9 +30,6 @@ class User < ActiveRecord::Base
                                   :medium => "300x300>",
                                   :large =>   "500x500>" }: {}
                                  }
-after_initialize :init
-def init
-#need to add default avatar
-  self.avatar||= "images/Star.png"
-end
+
+
 end

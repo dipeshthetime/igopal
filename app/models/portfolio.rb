@@ -4,7 +4,7 @@ class Portfolio < ActiveRecord::Base
   after_initialize :init
 	validates_presence_of :title, :start_date, :intro
   	attr_accessible :id, :achievements, :user_id, :title, :variety, :start_date, :intro, 
-  		:image_file_name, :image_content_type , :image,
+  		:image_file_name, :image_content_type , :image,  :startDate,
   		:image_file_size, :image_updated_at
   	has_attached_file :image, :dependent => :destroy,
                       :styles => lambda{ |a|
@@ -18,8 +18,7 @@ class Portfolio < ActiveRecord::Base
 
 def init
   self.variety ||='default'
+
 end
-
-
 end
  

@@ -1,5 +1,5 @@
 <div id="my-timeline"><h1>  <% if user_signed_in? %>
-	<%= current_user.first_name %> <%= current_user.last_name %>'s Portfolio
+	<%= @current_user.first_name %> <%= current_user.last_name %>'s Portfolio
 	  <% end %>
 	</h1></div>
 <%= link_to 'Add a New Achievement', new_achievement_path %>
@@ -27,20 +27,11 @@
       <p><%= link_to 'Show', achievement %> | <%= link_to 'Edit', edit_achievement_path(achievement) %> | 
         <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure you want to delete this entry?' } %>
       </p>
-    <div class="btn-group">
-      <button class="btn"><p><a href=link_to 'Show', achievement> Show</a></p></button>
-      <button class="btn">Edit</button>
-      <button class="btn" >Delete</button>
-    </div>
+
       </span>
     </div>
   </div>
 <% end %>
-<!-- <p>Rendered JSON for the table:</p>
-<p><%= @achievements.as_json %></p> -->
-
-
-
 <br/>
 
 <%= link_to 'New Achievement', new_achievement_path %>

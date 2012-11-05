@@ -11,7 +11,7 @@
     </div>
   <% end %>
 <div>
- <h3> <%= current_user.first_name%>, please create your new porfolio...</h3>
+ <h3> <%= current_user.first_name%>'s porfolio information...</h3>
 <p>Here you will enter the information to be displayed at at the beginning of your portfolio presentation.</br>
 Consider this the introduction to your work. </p>
 <div>
@@ -31,11 +31,11 @@ Consider this the introduction to your work. </p>
   </div>
   <div class="field">
     <%= f.label :introduction %>Enter a brief description of the work to follow or yourself.<br />
-    <%= f.text_field :intro %>
+    <%= f.text_area :intro %>
   </div>
     <div class="field">
     <%= f.label :feature_image %>Upload an image which represents your portfolio.<br />
-    <%= f.file_field :image %>
+ <div><%= f.file_field :image %></div> or  <div><%= f.text_field :image %></div>
   </div>
 
   <div class="actions">
