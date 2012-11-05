@@ -1,4 +1,4 @@
-<div id="my-timeline"><h1><%= @portfolio.user.first_name %> <%= @portfolio.user.last_name %>'s Portfolio </h1></div>
+<div ><h1><%= @portfolio.user.first_name %> <%= @portfolio.user.last_name %>'s Portfolio Attributes</h1></div>
 
 <p id="notice"><%= notice %></p>
 <p><b>Featured Image:</b></br>
@@ -26,5 +26,14 @@
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', users_portfolio_path %>
-<p><%= link_to 'New Achievement', users_portfolio_achievements_path %></p>
+
+<h4>Add an Achievement</h4>
+<%= form_for([@portfolio, @portfolio.achievements.build]) do |f| %>
+
+<% end %>
+<%= link_to 'Achievements', achievements_path %>
+
+
+
+
 

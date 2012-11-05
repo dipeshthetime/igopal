@@ -7,25 +7,28 @@ Igopal::Application.routes.draw do
 
   authenticated :users do
     root :to => 'home#index'
-      resources :portfolios do
-        resources :achievements do
-      end
-    end
+      resources :portfolios 
+
+
   end
   root :to => "home#index"
 
   devise_for :users
 
   resources :organizations
+  resource :portfolio
   resources :portfolios
+
+
+
   resources :achievements
 # I added this to tie dependent resources together.  
 # Not sure if this is correct
   resource :users do
     resources :portfolios do
-      resource :feature_image
+      resources :images
       resources :achievements do
-        resource :work
+        resources :work
       end
     end
   end
