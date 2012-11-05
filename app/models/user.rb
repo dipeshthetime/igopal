@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     include PublicActivity::Model
   tracked
   
-  rolify
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
   has_many :achievements, :through => :portfolio , :include => :achievements
   validates_presence_of :email, :first_name, :last_name, :login_name
   #has_one :organization
+
   attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
   has_attached_file :avatar,  :dependent => :destroy,                      
   						:styles => lambda{ |a|

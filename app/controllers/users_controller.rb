@@ -2,22 +2,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
 
-  before_filter :authenticate_user!
-  before_filter :only_allow_admin, :only => [ :index ]
-
-
 
 def create
   @user = User.create( params[:user] )
 end
 #added this for paperclip^
-
-
-  def only_allow_admin
-    redirect_to root_path, :alert => 'Not authorized as an administrator.' unless current_user.has_role? :admin
-  end
-
-
 
 
   
@@ -32,13 +21,12 @@ end
 
   # GET /users/1
   # GET /users/1.json
-  def show
+def show
+  if params[:id].nil? && current_user
+    @user = current_user
+  else
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
+  end
   end
 
   # GET /users/new
