@@ -9,11 +9,15 @@ class AchievementsController < ApplicationController
   end
 
   def index
-    @achievements = Achievement.all
+    # @achievements = Achievement.find(params[:portfolio_id])
+    # respond_to do |format|
+    #   format.html
+    # end
 
+    @achievements = Achievement.all
     respond_to do |format|
       format.html # index.html.erb
-      format.json {render template: "achievements/show.json.rabl"}#{ render json: @achievements }
+      format.json {render :handlers => :rabl}#{ render json: @achievements }
     end
   end
 
@@ -24,7 +28,7 @@ class AchievementsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json {render template: "achievements/show.json.rabl"}#{ render json: @achievement }
+      format.json {render :handlers => :rabl}#{ render json: @achievement }
     end
   end
 

@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   						:styles => lambda{ |a|
                                   ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
                                   :tiny=> "30x30",
-                                  :thumb=> "100x100#",
+                                  :thumb => "100x100#",
                                   :small  => "150x150>",
                                   :medium => "300x300>",
                                   :large =>   "500x500>" }: {}

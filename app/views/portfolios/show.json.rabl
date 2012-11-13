@@ -1,5 +1,5 @@
 ## This is the new and improved alias structure for timeline.
-# still needs images added and dates reformatted
+# 
 
 object @portfolio => :timeline
 	attribute :title => :headline
@@ -16,7 +16,7 @@ object @portfolio => :timeline
 		node(:endDate){|achievement| (achievement.end_date.strftime("%Y,%m,%d"))}
 		node(:headline){|achievement| (achievement.headline)}
 		node(:text){|achievement| (achievement.notes)}
-		child :work => :asset do 
+		child :work => :asset do |work|
 			node(:media){|work|(work.url)}
 			node(:credit){""}
 			node(:caption){""}

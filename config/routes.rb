@@ -6,11 +6,15 @@ Igopal::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   authenticated :users do
-    root :to => 'home#index'
+  #  root :to => 'home#index'
       resources :portfolios 
-
-
+      resources :achievements,:through =>:portfolios
   end
+
+  resources :achievements do
+    resources :users, :through =>:portfolios
+  end
+
   root :to => "home#index"
 
   devise_for :users

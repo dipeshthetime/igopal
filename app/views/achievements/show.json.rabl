@@ -5,7 +5,7 @@ node(:endDate){|achievement| (achievement.end_date)}
 node(:headline){|achievement| (achievement.headline)}
 node(:text){|achievement| (achievement.notes)}
 node(:asset){|achievement| (
-child @acheivements.work do
+child :work => :asset do
   node(:media){|work|(work.url)}
   node(:credit){}
   node(:caption){}

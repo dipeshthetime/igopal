@@ -6,3 +6,8 @@ $ ->
 		console.log("Hover triggered")
 		$(this).toggleClass("hover")
 
+	$('#switchBox').click (event)->
+		$('#work_file').toggleClass('hide')
+		$('#work_url').toggleClass('show')
+
+

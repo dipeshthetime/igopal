@@ -8,12 +8,13 @@ class Portfolio < ActiveRecord::Base
   		:image_file_size, :image_updated_at
   	has_attached_file :image, :dependent => :destroy,
                       :styles => lambda{ |a|
-                                  ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
+                                  ["image/jpeg", "image/png", "image/jpg", "image/gif",
+                                    "image/pptx"].include?( a.content_type ) ? {
                                   :tiny=> "30x30",
-                                  :thumb=> "100x100#",
-                                  :small  => "150x150>",
-                                  :medium => "300x300>",
-                                  :large =>   "500x500>" }: {}
+                                  :thumb=> "100x100",
+                                  :small  => "150x150",
+                                  :medium => "300x300",
+                                  :large =>   "500x500" }: {}
                                  }
 
 def init

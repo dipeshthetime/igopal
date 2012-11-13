@@ -8,11 +8,9 @@ def create
 end
   def index
     @portfolios = Portfolio.all
-
     respond_to do |format|
       format.html # index.html.erb
-      format.json {render(template: "portfolios/show.json.rabl")}#json: @portfolios.as_json}(:include => :achievements, :except => :created_at) }
-
+      format.json {render :handlers => :rabl}#json: @portfolios.as_json}(:include => :achievements, :except => :created_at) }
     end
   end
 
@@ -23,7 +21,7 @@ end
    # @achievement = @portfolio.achievements.create(params[:achievement])
     respond_to do |format|
       format.html  #show.html.erb  
-      format.json {render template: "portfolios/show.json.rabl"}#{ render json: @portfolio }
+      format.json {render :handlers => :rabl}#{ render json: @portfolio }
     end
   end
 
@@ -34,7 +32,7 @@ end
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json {render template: "portfolios/show.json.rabl"}
+      format.json {render :handlers => :rabl}
     end
   end
 
