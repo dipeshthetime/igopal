@@ -24,8 +24,9 @@ class AchievementsController < ApplicationController
   # GET /achievements/1
   # GET /achievements/1.json
   def show
-    @achievement = Achievement.find(params[:id])
 
+@achievement = Achievement.find(:all, :conditions => {
+  :portfolio_id => @current_user.portfolio.id})
     respond_to do |format|
       format.html # show.html.erb
       format.json {render :handlers => :rabl}#{ render json: @achievement }

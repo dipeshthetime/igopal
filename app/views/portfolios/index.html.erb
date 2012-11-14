@@ -1,4 +1,4 @@
-<h1>Listing portfolios</h1>
+<h1>Your Portfolio</h1>
 
 <table class = "table">
   <tr>
@@ -11,7 +11,7 @@
     <th>Featured Image</th>
   </tr>
 
-<% @portfolios.each do |portfolio| %>
+<% @portfolios.each do |portfolio| if portfolio.user_id == current_user.id %>
   <tr>
     <td><%= portfolio.user.first_name %> <%= portfolio.user.last_name %> with id of: <%= portfolio.user.id %></td>
     <td><%= portfolio.title %></td>
@@ -25,11 +25,12 @@
     <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+<% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Portfolio', new_users_portfolio_path %>
+
 
 
   

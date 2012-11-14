@@ -18,6 +18,7 @@
   <% if user_signed_in? %>
     Signed in as: <%= current_user.email %> with id: <%= current_user.id %>. </br>
     This user's portfolio id is <%= current_user.portfolio.id %>
+  
     <!-- Portfolio Id: <%= @portfolio_id %>  --> 
   <% end %>
  
