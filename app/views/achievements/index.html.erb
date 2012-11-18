@@ -5,7 +5,7 @@
 <%= link_to 'Add a New Achievement', new_achievement_path %>
 <h3>Listing achievements</h3>
 
-<% @achievements.each do |achievement| if achievement.portfolio.user_id == current_user.id %>
+<% @achievements.each do |achievement|if achievement.portfolio.user_id == current_user.id %>
 <div class="achievement"
     <strong><%= achievement.headline %></strong>
     <p><%= achievement.start_date %> to 
