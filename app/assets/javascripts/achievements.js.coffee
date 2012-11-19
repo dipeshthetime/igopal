@@ -10,4 +10,4 @@ $ ->
 		$('#work_file').toggleClass('hide')
 		$('#work_url').toggleClass('show')
 
-
+	
