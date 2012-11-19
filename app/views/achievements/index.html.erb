@@ -1,5 +1,6 @@
 <div id="my-timeline"><h1>  <% if user_signed_in? %>
-	<%= current_user.first_name %> <%= current_user.last_name %>'s Portfolio
+	<%= current_user.first_name %> <%= current_user.last_name %>'s Portfolio</br>
+ <p id = "pid" current_user.portfolio.id />
 	  <% end %>
 	</h1></div>
 <%= link_to 'Add a New Achievement', new_achievement_path %>
@@ -19,6 +20,7 @@
   <b>portfolio user id:</b>
   <%= achievement.portfolio.user_id %>
 </p>
+
 <p>
   <b>current user id:</b>
   <%= current_user.id %>
