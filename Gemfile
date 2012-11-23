@@ -6,14 +6,6 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'rabl'
 gem 'pg'
-
-source :gemcutter
-gem 'rails'
-
-group :development, :test do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-end
-
 gem "paperclip", "~> 3.2.0"
 gem 'thin'
 gem 'carrierwave'
