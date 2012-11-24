@@ -170,6 +170,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.14.1-x86-mingw32)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -287,6 +288,7 @@ DEPENDENCIES
   merit
   meta_search (>= 1.1.0.pre)
   paperclip (~> 3.2.0)
+  pg
   public_activity
   quiet_assets (>= 1.0.1)
   rabl
