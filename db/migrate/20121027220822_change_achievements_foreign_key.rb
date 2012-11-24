@@ -3,7 +3,7 @@ class ChangeAchievementsForeignKey < ActiveRecord::Migration
 
  	change_table :achievements do |t|
  		t.references :user
- 		remove_column :portfolio_id
+ 		remove_column :achievements, :portfolio_id
  	end
   end
 

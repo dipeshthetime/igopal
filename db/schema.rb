@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121105050354) do
+ActiveRecord::Schema.define(:version => 20121029230608) do
 
   create_table "achievements", :force => true do |t|
     t.string   "headline"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20121105050354) do
     t.string   "work_content_type"
     t.integer  "work_file_size"
     t.datetime "work_updated_at"
-    t.integer  "portfolio_id"
+    t.integer  "user_id"
   end
 
   create_table "active_admin_comments", :force => true do |t|
@@ -132,11 +132,15 @@ ActiveRecord::Schema.define(:version => 20121105050354) do
   create_table "portfolios", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
-    t.string   "variety",            :default => "default"
+    t.string   "variety",                    :default => "default"
     t.date     "start_date"
     t.string   "intro"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+    t.string   "feature_image_file_name"
+    t.string   "feature_image_content_type"
+    t.integer  "feature_image_file_size"
+    t.datetime "feature_image_updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -180,6 +184,8 @@ ActiveRecord::Schema.define(:version => 20121105050354) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "role"
+    t.integer  "sash_id"
+    t.integer  "level",                  :default => 0
   end
 
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true

@@ -1,0 +1,48 @@
+Running `rake db:migrate =` attached to terminal... up, run.1
+DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/Rakefile:7)
+DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/Rakefile:7)
+DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/Rakefile:7)
+rake aborted!
+FATAL:  role "uqwucdsvphneac" is not permitted to log in
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/postgresql_adapter.rb:1213:in `initialize'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/postgresql_adapter.rb:1213:in `new'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/postgresql_adapter.rb:1213:in `connect'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/postgresql_adapter.rb:329:in `initialize'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `new'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/postgresql_adapter.rb:28:in `postgresql_connection'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:309:in `new_connection'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:319:in `checkout_new_connection'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:241:in `block (2 levels) in checkout'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:236:in `loop'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:236:in `block in checkout'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:233:in `checkout'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:96:in `block in connection'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:95:in `connection'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:404:in `retrieve_connection'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:170:in `retrieve_connection'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/connection_adapters/abstract/connection_specification.rb:144:in `connection'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/model_schema.rb:308:in `clear_cache!'
+/app/vendor/bundle/ruby/1.9.1/gems/activerecord-3.2.8/lib/active_record/railtie.rb:97:in `block (2 levels) in <class:Railtie>'
+/app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:418:in `_run__3184298403533863410__prepare__2926860813513278593__callbacks'
+/app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:405:in `__run_callback'
+/app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:385:in `_run_prepare_callbacks'
+/app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.8/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/reloader.rb:74:in `prepare!'
+/app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/reloader.rb:48:in `prepare!'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/application/finisher.rb:47:in `block in <module:Finisher>'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/initializable.rb:30:in `instance_exec'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/initializable.rb:30:in `run'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/initializable.rb:55:in `block in run_initializers'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/initializable.rb:54:in `each'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/initializable.rb:54:in `run_initializers'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/application.rb:136:in `initialize!'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/railtie/configurable.rb:30:in `method_missing'
+/app/config/environment.rb:5:in `<top (required)>'
+/app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.8/lib/active_support/dependencies.rb:251:in `require'
+/app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.8/lib/active_support/dependencies.rb:251:in `block in require'
+/app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.8/lib/active_support/dependencies.rb:236:in `load_dependency'
+/app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.8/lib/active_support/dependencies.rb:251:in `require'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/application.rb:103:in `require_environment!'
+/app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.8/lib/rails/application.rb:295:in `block (2 levels) in initialize_tasks'
+Tasks: TOP => db:migrate => environment
+(See full trace by running task with --trace)
