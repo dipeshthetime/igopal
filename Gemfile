@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 gem 'rabl'
 gem 'sqlite3' , :group => :development
 gem 'pg', :group => :production
+gem 'activerecord-postgresql-adapter'
 gem "paperclip", "~> 3.2.0"
 gem 'thin'
 gem 'carrierwave'
