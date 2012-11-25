@@ -2,6 +2,9 @@ class OrganizationsController < ApplicationController
 
   # GET /organizations
   # GET /organizations.json
+ 
+before_filter :authenticate_user!
+
   def create
   @organization = Organization.create( params[:organization] )
 end

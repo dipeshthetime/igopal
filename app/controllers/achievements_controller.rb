@@ -2,7 +2,7 @@ class AchievementsController < ApplicationController
   # GET /achievements
   # GET /achievements.json
   
-
+before_filter :authenticate_user!
 
   def create
     @achievement = Achievement.create( params[:achievement] )

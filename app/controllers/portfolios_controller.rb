@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
-
+before_filter :authenticate_user!
 
 def create
   @portfolio = Portfolio.create( params[:portfolio] )
