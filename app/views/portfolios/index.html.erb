@@ -13,22 +13,23 @@
 
 <% @portfolios.each do |portfolio| if portfolio.user_id == current_user.id %>
   <tr>
-    <td><%= portfolio.user.first_name %> <%= portfolio.user.last_name %> with id of: <%= portfolio.user.id %></td>
-    <td><%= portfolio.title %></td>
-    <td><%= portfolio.id %></td>
+      <td><%= portfolio.user.first_name %> <%= portfolio.user.last_name %> with id of: 
+        <%= portfolio.user.id %></td>
+      <td><%= portfolio.title %></td>
+      <td><%= portfolio.id %></td>
       <td><%= portfolio.variety %></td>   
       <td><%= portfolio.start_date%></td>    
       <td><%= portfolio.intro %></td>
       <td><%= image_tag portfolio.image.url(:tiny) %></td>
-    <td><%= link_to 'Show', portfolio  %></td>
-    <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
-    <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Show', portfolio  %></td>
+      <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
+      <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 <% end %>
 </table>
 
-<br />
+<br/>
 
 
 

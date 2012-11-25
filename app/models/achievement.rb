@@ -4,8 +4,9 @@ class Achievement < ActiveRecord::Base
   attr_accessible :end_date, :headline, :notes, :start_date, :work, 
   :work_file_name, :work_content_type, :work_file_size, :work_updated_at,
   :user_id, :portfolio_id, :portfolio, :user
-  has_attached_file :work, :dependent => :destroy,:whiney_thumbnails => :true,
-                        :styles => { :normal => "100x100#", :small => ["70x70>", :jpg] } 
+  
+  has_attached_file :work, :dependent => :destroy,:whiney_thumbnails => :true
+
 
 
 end

@@ -3,42 +3,36 @@
 	
 
   <% if user_signed_in? %>
-
-		<li>
-		<%=link_to "My Achievements", achievements_path %>
-		</li>
-
-    <li>
-    </li>
-    
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
-    </li>
-
-    <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
-    </li>
+  		<li>
+  		  <%=link_to "My Achievements", achievements_path %>
+  		</li>
+      <li>
+      </li>
+      <li>
+        <%= link_to 'Edit account', edit_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
+      </li>
   <% else %>
-    <li>
-    <%= link_to 'Login', new_user_session_path %>  
-    </li>
-
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
+      <li>
+        <%= link_to 'Login', new_user_session_path %>  
+      </li>
+      <li>
+        <%= link_to 'Sign up', new_user_registration_path %>
+      </li>
   <% end %>
   
 </ul>
 
 <div id="user_nav" style="text-align: right";>
   <% if user_signed_in? %>
-    Signed in as <%= current_user.first_name %> <%= current_user.last_name %>
+     Signed in as <%= current_user.first_name %> <%= current_user.last_name %>
   <% else %>
     <%= form_for("user", :url => user_session_path) do |f| %>
-  <%= f.text_field :email, :class => "input-small", :placeholder => "Email"%>
-  <%= f.password_field :password, :class => "input-small", :placeholder => "Password" %>
-  <%= f.submit 'Sign in', :class => "btn"%>
- 
-<% end %>
+    <%= f.text_field :email, :class => "input-small", :placeholder => "Email"%>
+    <%= f.password_field :password, :class => "input-small", :placeholder => "Password"%>
+    <%= f.submit 'Sign in', :class => "btn"%>
   <% end %>
+<% end %>
 </div>

@@ -19,7 +19,6 @@ class Portfolio < ActiveRecord::Base
 
 def init
   self.variety ||='default'
-
 end
 end
  

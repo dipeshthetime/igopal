@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   has_many :achievements, :through => :portfolio , :include => :achievements
   validates_presence_of :email, :first_name, :last_name, :login_name
   #has_one :organization
-
+  after_initialize :init
   attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
   has_attached_file :avatar,  :dependent => :destroy,                      
   						:styles => lambda{ |a|
@@ -27,9 +27,11 @@ class User < ActiveRecord::Base
                                   :tiny=> "30x30",
                                   :thumb => "100x100#",
                                   :small  => "150x150>",
-                                  :medium => "300x300>",
-                                  :large =>   "500x500>" }: {}
+                                  :medium => "300x300>"
+                                  }: {}
                                  }
-
+def init
+  self.avatar ||='/assets/images/avatar_male.png'
+end
 
 end
