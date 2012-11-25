@@ -1,13 +1,27 @@
 <%= link_to "iGopal", root_path, :class => 'brand' %>
 <ul class="nav">
-	
+	 
 
+ 
   <% if user_signed_in? %>
+
+           <% if current_user.role_ids == 3 %>
+
+    <li>
+    <%=link_to "My Organization", organizations_path %>
+    </li>
+    <li>
+    <%=link_to "Students", users_path %>
+    </li>
+  <% else %> 
+
+
+
 
 		<li>
 		<%=link_to "My Achievements", achievements_path %>
 		</li>
-
+  <% end %>
     <li>
     </li>
     

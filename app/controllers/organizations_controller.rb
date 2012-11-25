@@ -4,7 +4,7 @@ class OrganizationsController < ApplicationController
   # GET /organizations.json
  
 before_filter :authenticate_user!
-
+load_and_authorize_resource
   def create
   @organization = Organization.create( params[:organization] )
 end
