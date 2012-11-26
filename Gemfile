@@ -5,11 +5,14 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'rabl'
-gem 'sqlite3'
+gem 'sqlite3' , :group => :development
+gem 'pg', :group => :production
+# gem 'activerecord-postgresql-adapter'
 gem "paperclip", "~> 3.2.0"
+gem 'thin'
 gem 'carrierwave'
   gem 'aws-sdk'
-
+  gem 'heroku'
   gem 'activeadmin'
   gem "meta_search",    '>= 1.1.0.pre'
   gem 'merit'
@@ -52,4 +55,3 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 
 # To use debugger
 # gem 'debugger'
-gem 'rabl'

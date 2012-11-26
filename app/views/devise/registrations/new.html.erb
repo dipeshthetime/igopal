@@ -7,9 +7,14 @@
   <%= f.input :email, :required => true %>
   <%= f.input :password, :required => true %>
   <%= f.input :password_confirmation, :required => true %>
-
-<%= f.input :role, :collection => ['Student', 'Organization'], :as => :radio, :required => true %>
-
+Role:
+  <% for role in Role.find(:all) %>
+    <div>
+      <%= radio_button_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+      <%= role.name %>
+    </div>
+  <% end %>
+<br>Avatar:<p>
   <%= f.file_field :avatar %><br/>
   <p></p>
   <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>

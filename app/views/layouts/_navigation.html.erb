@@ -1,19 +1,39 @@
 <%= link_to "iGopal", root_path, :class => 'brand' %>
 <ul class="nav">
-	
+	 
 
+ 
   <% if user_signed_in? %>
-  		<li>
-  		  <%=link_to "My Achievements", achievements_path %>
-  		</li>
-      <li>
-      </li>
-      <li>
-        <%= link_to 'Edit account', edit_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
-      </li>
+
+
+           <% if current_user.role_ids == 2 %>
+
+    <li>
+    <%=link_to "My Organization", organizations_path %>
+    </li>
+    <li>
+    <%=link_to "Students", users_path %>
+    </li>
+  <% else %> 
+
+
+
+
+		<li>
+		<%=link_to "My Achievements", achievements_path %>
+		</li>
+  <% end %>
+    <li>
+    </li>
+    
+    <li>
+    <%= link_to 'Edit account', edit_user_registration_path %>
+    </li>
+
+    <li>
+    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
+    </li>
+
   <% else %>
       <li>
         <%= link_to 'Login', new_user_session_path %>  
