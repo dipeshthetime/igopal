@@ -7,7 +7,7 @@ class Ability
     if user.role? :Organization
       can :manage, :all
     elsif user.role? :Student
-      can :manage, User
+      can :manage, User, Achievement, Portfolio
     else 
       can :read, :all
     end

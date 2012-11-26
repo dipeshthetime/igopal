@@ -1,18 +1,18 @@
 <div id="my-timeline"><h1>  <% if user_signed_in? %>
-	<%= current_user.first_name %> <%= current_user.last_name %>'s Portfolio</br>
- <input hidden id = "pid" value= "<%=current_user.portfolio.id %>"/><%=current_user.portfolio.id %></input>
-	  <% end %>
-	</h1></div>
+    <%= current_user.first_name %> <%= current_user.last_name %>'s Portfolio</br>
+ <input hidden id = "pid" value= "<%=current_user.portfolio.id %>"/></input>
+      <% end %>
+    </h1></div>
 <%= link_to 'Add a New Achievement', new_achievement_path %>
 <h3>Listing achievements</h3>
 
 <% @achievements.each do |achievement|if achievement.portfolio.user_id == current_user.id %>
-<div class="achievement"
+<div class="achievement">
     <strong><%= achievement.headline %></strong>
     <p><%= achievement.start_date %> to 
     <%= achievement.end_date %></p>
     <em><%= achievement.notes %></em>
-<p>
+<!-- <p>
   <b>portfolio id:</b>
   <%= achievement.portfolio_id %>
 </p>
@@ -24,7 +24,7 @@
 <p>
   <b>current user id:</b>
   <%= current_user.id %>
-</p>
+</p> -->
 
     <div class="meta">
       <%= link_to time_ago_in_words(achievement.created_at) + " ago", achievement %>  
