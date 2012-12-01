@@ -9,7 +9,7 @@ gem 'sqlite3' , :group => :development
 gem 'pg', :group => :production
 # gem 'activerecord-postgresql-adapter'
 gem "paperclip", "~> 3.2.0"
-gem 'paperclipdropbox'
+gem "paperclip-dropbox"
 gem 'thin'
 gem 'carrierwave'
   gem 'aws-sdk'

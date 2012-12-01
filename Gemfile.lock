@@ -94,10 +94,8 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     diff-lcs (1.1.3)
-    dropbox (1.3.0)
-      json (>= 1.2.0)
-      multipart-post (>= 1.1.0)
-      oauth (>= 0.3.6)
+    dropbox-sdk (1.5.1)
+      json
     email_spec (1.2.1)
       mail (~> 2.2)
       rspec (~> 2.0)
@@ -164,11 +162,9 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     multi_xml (0.5.1)
-    multipart-post (1.1.5)
     netrc (0.7.7)
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
-    oauth (0.4.7)
     orm_adapter (0.4.0)
     paperclip (3.2.0)
       activemodel (>= 3.0.0)
@@ -176,9 +172,9 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
-    paperclipdropbox (1.0.9)
-      dropbox
-      paperclip
+    paperclip-dropbox (1.0.1)
+      dropbox-sdk (~> 1.3)
+      paperclip (~> 3.1)
     pg (0.14.1)
     pg (0.14.1-x86-mingw32)
     polyamorous (0.5.0)
@@ -299,7 +295,7 @@ DEPENDENCIES
   merit
   meta_search (>= 1.1.0.pre)
   paperclip (~> 3.2.0)
-  paperclipdropbox
+  paperclip-dropbox
   pg
   public_activity
   quiet_assets (>= 1.0.1)
