@@ -10,7 +10,11 @@
 <img src = "<%= current_user.avatar %>" width="125" height="125" >
 <center><h3><%= current_user.first_name %> <%= current_user.last_name %></h3></center>
 <center><p>User ID: <%= current_user.id %></p></center>
-<center><p>User Role ID: <%= current_user.role_ids %></p></center>
+<% if current_user.role_ids == [1] %>
+<center><p>User Role: Student</p></center>
+<% else %>
+<center><p>User Role: Organization</p></center>
+<% end %>
 
 </div>
 </li>
