@@ -23,15 +23,11 @@ class User < ActiveRecord::Base
   #has_one :organization
 
   attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
-  has_attached_file :avatar,  :dependent => :destroy,                      
-  						:styles => lambda{ |a|
-                                  ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
-                                  :tiny=> "30x30",
-                                  :thumb => "100x100#",
-                                  :small  => "150x150>",
-                                  :medium => "300x300>",
-                                  :large =>   "500x500>" }: {}
-                                 }
+  has_attached_file :avatar, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
 
   def role?(role)
     return !!self.roles.find_by_name(role.to_s.camelize)
