@@ -16,18 +16,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :id, :role_ids, :avatar
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :id, :role_ids
   has_one :portfolio, :dependent => :destroy, :inverse_of => :user
   has_many :achievements, :through => :portfolio , :include => :achievements
   validates_presence_of :email, :first_name, :last_name, :login_name
   #has_one :organization
 
   attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
-  has_attached_file :avatar,  :dependent => :destroy,
-              :storage => :dropbox,
-              :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
-              :dropbox_options => {:path => proc { |style| "#{style}/#{id}_#{avatar.original_filename}"}},
-              :unique_filename => true,                      
+  has_attached_file :avatar,  :dependent => :destroy,                      
   						:styles => lambda{ |a|
                                   ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
                                   :tiny=> "30x30",
