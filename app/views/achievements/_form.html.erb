@@ -19,7 +19,7 @@
     Signed in as: <%= current_user.email %> with id: <%= current_user.id %>. </br>
     This user's portfolio id is <%= current_user.portfolio.id %>
   
-    <!-- Portfolio Id: <%= @portfolio_id %>  --> 
+
   <% end %>
  
   <%= f.hidden_field :notes, :value => current_user.email %>
@@ -40,7 +40,9 @@
  <div class="field">
 
   <%= f.label :work_to_upload %>
+
 <!--   <input type = "button" id = "switchBox"  value ="Switch between file upload and url entry"></input> -->
+
   <div id = "work_file"  ><%= f.file_field :work, :disabled => false%></br></div>
 
 

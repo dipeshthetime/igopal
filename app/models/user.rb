@@ -16,22 +16,20 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :id, :role_ids
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :id, :role_ids, :avatar
   has_one :portfolio, :dependent => :destroy, :inverse_of => :user
   has_many :achievements, :through => :portfolio , :include => :achievements
   validates_presence_of :email, :first_name, :last_name, :login_name
   #has_one :organization
   after_initialize :init
   attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
-  has_attached_file :avatar,  :dependent => :destroy,                      
-  						:styles => lambda{ |a|
-                                  ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
-                                  :tiny=> "30x30",
-                                  :thumb => "100x100#",
-                                  :small  => "150x150>",
-                                  :medium => "300x300>"
-                                  }: {}
-                                 }
+
+  has_attached_file :avatar,  :dependent => :destroy, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
+>>>>>>> 295e57786922ac07327cdee387ccae524c859d29
 
 def init
   self.avatar ||='/assets/images/avatar_male.png'

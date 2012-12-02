@@ -6,7 +6,7 @@ default_run_options[:pty] = true
 
     set :application, "igopal"
   set :deploy_to, "/var/www/apps/#{application}"
-  set :user, "igpstar"
+  set :user, "dipesh123"
   
   role :app, "igopal.com"
   role :web, "igopal.com"

@@ -8,10 +8,11 @@ gem 'rails', '3.2.8'
 gem 'sqlite3' , :group => :development
 gem 'pg', :group => :production
 # gem 'activerecord-postgresql-adapter'
-gem "paperclip", "~> 3.2.0"
+gem 'paperclip', '~> 3.2.0'
+gem "paperclip-dropbox"
+gem 'aws-sdk', '~> 1.6.0'
 gem 'thin'
 gem 'carrierwave'
-  gem 'aws-sdk'
   gem 'heroku'
   gem 'activeadmin'
   gem "meta_search",    '>= 1.1.0.pre'

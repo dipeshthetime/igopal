@@ -7,11 +7,19 @@
 <li class="span4">
 <div class="thumbnail">
   <% if user_signed_in? %>
-<img src = "<%= current_user.avatar %>" width="125" height="125" >
+  <%= image_tag current_user.avatar.url(:medium) %>
 <center><h3><%= current_user.first_name %> <%= current_user.last_name %></h3></center>
 <center><p>User ID: <%= current_user.id %></p></center>
 
+
 <center><p>User Role: <%= current_user.role %></p></center>
+
+
+<% if current_user.role_ids == [1] %>
+<center><p>User Role: Student</p></center>
+<% else %>
+<center><p>User Role: Organization</p></center>
+<% end %>
 
 
 </div>
