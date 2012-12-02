@@ -4,9 +4,8 @@
 
  
   <% if user_signed_in? %>
+  <% if current_user.role_ids == 2 %>
 
-
-           <% if current_user.role_ids == 2 %>
 
     <li>
     <%=link_to "My Organization", organizations_path %>

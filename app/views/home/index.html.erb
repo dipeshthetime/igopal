@@ -10,8 +10,8 @@
 <img src = "<%= current_user.avatar %>" width="125" height="125" >
 <center><h3><%= current_user.first_name %> <%= current_user.last_name %></h3></center>
 <center><p>User ID: <%= current_user.id %></p></center>
-<center><p>User Role: <%= current_user.role %></p></center>
 
+<center><p>User Role: <%= current_user.role %></p></center>
 
 
 </div>
@@ -22,7 +22,7 @@
      <ul class="nav nav-list">
     <li class="nav-header">User Options</li>
     <li class="active"><a href="#">Home</a></li>
-     <% if current_user.role_ids == 2 %>
+     <% if current_user.role_ids == [2] %>
         <li><%= link_to "Create Organization Page", new_organization_path %> </li>
      <% else %>   
     <% if current_user.portfolio %>

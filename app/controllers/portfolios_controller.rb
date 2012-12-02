@@ -10,7 +10,7 @@ end
     @portfolios = Portfolio.all
     respond_to do |format|
       format.html # index.html.erb
-      format.json {render :handlers => :rabl}#json: @portfolios.as_json}(:include => :achievements, :except => :created_at) }
+      format.json {render :handlers => :rabl, :include => :achievements}#json: @portfolios.as_json}(:include => :achievements, :except => :created_at) }
     end
   end
 

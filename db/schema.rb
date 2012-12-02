@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20121125035019) do
     t.integer  "work_file_size"
     t.datetime "work_updated_at"
     t.integer  "user_id"
+    t.integer  "portfolio_id"
   end
 
   create_table "active_admin_comments", :force => true do |t|
