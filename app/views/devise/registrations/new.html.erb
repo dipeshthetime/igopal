@@ -14,9 +14,10 @@ Role:
       <%= role.name %>
     </div>
   <% end %>
-<br>Avatar:<p>
-  <%= f.file_field :avatar %><br/>
-  <p></p>
+<div class="field">
+  <%= f.label :avatar %><br />
+  <%= f.file_field :avatar %>
+</div>
   <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
 <% end %>
 <%= render "devise/shared/links" %>
