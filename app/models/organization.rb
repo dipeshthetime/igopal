@@ -18,7 +18,7 @@ class Organization < ActiveRecord::Base
                                   :thumb=> "100x100#",
                                   :small  => "150x150>",
                                   :medium => "300x300>",
-                                  :large =>   "500x500>" }: {}
+                                  :cover =>   "851x315>" }: {}
                                  }
 
 

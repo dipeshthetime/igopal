@@ -5,10 +5,6 @@ class Achievement < ActiveRecord::Base
   :work_file_name, :work_content_type, :work_file_size, :work_updated_at,
   :user_id, :portfolio_id, :portfolio, :user
   
-  has_attached_file :work, :dependent => :destroy,:whiney_thumbnails => :true
-
-
-
-
+  has_attached_file :work, :dependent => :destroy
 
 end

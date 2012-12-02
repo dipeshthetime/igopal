@@ -24,12 +24,8 @@ class User < ActiveRecord::Base
   after_initialize :init
   attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
 
-  has_attached_file :avatar,  :dependent => :destroy, styles: {
-    thumb: '100x100>',
-    square: '200x200#',
-    medium: '300x300>'
-  }
->>>>>>> 295e57786922ac07327cdee387ccae524c859d29
+  has_attached_file :avatar,  :dependent => :destroy
+
 
 def init
   self.avatar ||='/assets/images/avatar_male.png'
