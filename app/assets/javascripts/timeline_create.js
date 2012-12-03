@@ -9,7 +9,7 @@ $(document).ready(function() {
         type:       'timeline',
         width:      "100%",
         height:     '600',                                                        
-  		source: 	"portfolios/1.json",
+  		source: 	source_str,
         embed_id:   "my-timeline"
     });
 });
