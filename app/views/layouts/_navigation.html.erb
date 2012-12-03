@@ -8,7 +8,8 @@
 
 
     <li>
-    <%=link_to "My Organization", organizations_path %>
+    <%= link_to 'My Organization', current_user.organization %>
+
     </li>
     <li>
     <%=link_to "Students", users_path %>
@@ -17,7 +18,7 @@
 
 
 
-<%if current_user.portfolio %>
+<%if current_user.portfolio%>
 		<li>
 		<%=link_to "My Achievements", achievements_path %>
 		</li>

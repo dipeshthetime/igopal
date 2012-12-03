@@ -33,7 +33,11 @@ Igopal::Application.routes.draw do
   resources :portfolios do 
     resources :achievements
   end
-  
+
+
+  resources :portfolios do
+    resources :achievements
+  end
 
 
 

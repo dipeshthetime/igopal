@@ -6,16 +6,7 @@ class Portfolio < ActiveRecord::Base
   	attr_accessible :id, :achievements, :user_id, :title, :variety, :start_date, :intro, 
   		:image_file_name, :image_content_type , :image,  :startDate,
   		:image_file_size, :image_updated_at
-  	has_attached_file :image, :dependent => :destroy,
-                      :styles => lambda{ |a|
-                                  ["image/jpeg", "image/png", "image/jpg", "image/gif",
-                                    "image/pptx"].include?( a.content_type ) ? {
-                                  :tiny=> "30x30",
-                                  :thumb=> "100x100",
-                                  :small  => "150x150",
-                                  :medium => "300x300",
-                                  :large =>   "500x500" }: {}
-                                 }
+  	has_attached_file :image, :dependent => :destroy
 
 def init
   self.variety ||='default'

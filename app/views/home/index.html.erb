@@ -27,7 +27,12 @@
     <li class="nav-header">User Options</li>
     <li class="active"><a href="#">Home</a></li>
      <% if current_user.role_ids == [2] %>
-        <li><%= link_to "Create Organization Page", new_organization_path %> </li>
+        <% if current_user.organization %>
+          <li><%= link_to 'My Organization', current_user.organization %></li>
+          </li>
+        <%else%>
+          <li><%= link_to "Create Organization Page", new_organization_path %> </li>
+        <%end%>
      <% else %> 
 
 
