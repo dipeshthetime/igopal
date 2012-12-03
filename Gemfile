@@ -10,6 +10,7 @@ gem 'pg', :group => :production
 # gem 'activerecord-postgresql-adapter'
 gem "paperclip", "~> 3.2.0"
 gem 'thin'
+gem "paperclip-dropbox"
 gem 'carrierwave'
   gem 'aws-sdk'
   gem 'heroku'
