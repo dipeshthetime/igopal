@@ -7,10 +7,10 @@
 </div>
 
 <h2><%= @organization.name %> Details</h2>
-<p>
+<!-- <p>
   <b>User ID:</b>
   <%= @organization.user_id %>
-</p>
+</p> -->
 
 <p>
   <b>Name:</b>
@@ -44,16 +44,11 @@
   
 <p><b>Logo Image:</b></br>
 <div class = "logo">
-  <%= image_tag @organization.logo.url(:tiny) %>
+  <%= image_tag @organization.logo.url %>
 </div>
 </p>
 
-<p>
-  <b>Cover Image</b>
-<div class = "cover">  
-  <%= image_tag @organization.cover.url %>
-</div>
-</p> 
+
 
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |

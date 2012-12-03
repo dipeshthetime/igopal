@@ -12,14 +12,10 @@ class Organization < ActiveRecord::Base
                                  }
 
   has_attached_file :cover,:dependent => :destroy,
-                      :styles => lambda{ |a|
-                                  ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
+                      :styles => {
                                   :tiny=> "30x30",
-                                  :thumb=> "100x100#",
-                                  :small  => "150x150>",
-                                  :medium => "300x300>",
-                                  :cover =>   "851x315>" }: {}
-                                 }
+                                  :thumb=> "425x116",
+                                  :cover =>   "851x315>" }
 
 
   resourcify

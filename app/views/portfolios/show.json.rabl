@@ -17,7 +17,7 @@ object @portfolio => :timeline
 			node(:headline){|achievement| (achievement.headline)}
 			node(:text){|achievement| (achievement.notes)}
 			child :work => :asset do |work|
-				node(:media){"https://dl.dropbox.com/u/20373477/Lab1_Report.ppt"}
+				node(:media){|work|(work.url)}
 				node(:credit){""}
 				node(:caption){""}
 			end

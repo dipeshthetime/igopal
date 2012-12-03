@@ -15,38 +15,38 @@
 <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :address %>
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :city %><br />
+    <%= f.label :city %>
     <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label :state %><br />
+    <%= f.label :state %>
     <%= f.text_field :state %>
   </div>
   <div class="field">
-    <%= f.label :zip %><br />
+    <%= f.label :zip %>
     <%= f.text_field :zip %>
   </div>
   <div class="field">
-    <%= f.label :url %><br />
+    <%= f.label :url %>
     <%= f.text_field :url %>
   </div>
-
-  <div>
-    <%= f.label :cover %><br />
-    <%= f.file_field :cover %>
-  </div>
     <div>
-    <%= f.label :logo %><br />
+    <%= f.label :logo %>
     <%= f.file_field :logo %>
   </div>
+  <div>
+    <%= f.label :cover %>
+    <%= f.file_field :cover %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
