@@ -17,10 +17,11 @@
 
 
 
-
+<%if current_user.portfolio %>
 		<li>
 		<%=link_to "My Achievements", achievements_path %>
 		</li>
+  <% end %>
   <% end %>
     <li>
     </li>
