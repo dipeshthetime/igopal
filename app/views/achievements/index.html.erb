@@ -1,7 +1,7 @@
 <div id="my-timeline"><h1>  <% if user_signed_in? %>
 
 <%= current_user.first_name %> <%= current_user.last_name %>'s Portfolio</br>
- <input hidden id = "pid" value= "<%=current_user.portfolio.id %>"/></input>
+ <input hidden id = "pid" value= "<%= current_user.portfolio.id %>"/></input>
       <% end %>
     </h1></div>
 <center><button class="btn btn-large btn-block" type="button"><%= link_to 'Add a New Achievement', new_achievement_path %></button></center>
@@ -50,9 +50,9 @@
   <% end %>
 <% end %>
 <br/>
-<%if current_user.id = achievement.portfolio.user_id%>
+
 <%= link_to 'New Achievement', new_achievement_path %></br>
 <%= link_to 'Edit This Porflolio Cover Page', edit_portfolio_path(current_user.portfolio) %>
-<%end%>
+
 
 
