@@ -68,9 +68,5 @@ Igopal::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  # Amazon S3 settings for Paperclip uploads
-  config.paperclip_defaults = {
-   :storage => :dropbox,
-   :dropbox_credentials => "#{Rails.root}/config/dropbox.yml"
-  } 
+  # Amazon S3 settings for Paperclip uploads 
 end

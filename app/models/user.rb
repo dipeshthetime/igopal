@@ -25,9 +25,12 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
 
-  has_attached_file :avatar,  :dependent => :destroy
-
-
+  has_attached_file :avatar,
+    :storage => :dropbox,
+    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+    :dropbox_options => {
+      :path => proc { |style| "#{style}/#{id}_#{avatar.original_filename}"}
+    }
 
 
 
