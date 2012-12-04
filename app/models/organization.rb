@@ -1,21 +1,33 @@
 class Organization < ActiveRecord::Base
 	validates_presence_of :user_id, :name, :inverse_of => :organization
   attr_accessible :user_id, :name, :address, :city, :state, :zip, :url, :logo, :cover
-  has_attached_file :logo, :dependent => :destroy,
-                      :styles => lambda{ |a|
-                                  ["image/jpeg", "image/png", "image/jpg", "image/gif"].include?( a.content_type ) ? {
+   has_attached_file :logo,
+    :storage => :dropbox,
+    :styles => {
                                   :tiny=> "30x30",
-                                  :thumb=> "100x100#",
-                                  :small  => "150x150>",
-                                  :medium => "300x300>",
-                                  :large =>   "500x500>" }: {}
-                                 }
+                                  :thumb => "100x100",
+                                  :small  => "150x150",
+                                  :medium => "300x300",
+                                  },
+    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+    :dropbox_options => {
+      :path => proc { |style| "#{style}/#{id}_#{logo.original_filename}"}
+    }                               
 
-  has_attached_file :cover,:dependent => :destroy,
-                      :styles => {
+
+   has_attached_file :cover,
+    :storage => :dropbox,
+    :styles => {
                                   :tiny=> "30x30",
-                                  :thumb=> "425x116",
-                                  :cover =>   "851x315>" }
+                                  :thumb => "100x100",
+                                  :small  => "150x150",
+                                  :medium => "300x300",
+                                  :cover =>   "851x315"
+                                  },
+    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+    :dropbox_options => {
+      :path => proc { |style| "#{style}/#{id}_#{cover.original_filename}"}
+    }                               
 
 
   resourcify

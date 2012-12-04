@@ -1,0 +1,30 @@
+<h1>Listing Students</h1>
+
+<table>
+  <tr>
+    <th>First name</th> 
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Avatar</th>
+    <th>Portfolio</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+
+  <tr>
+    <td><%= user.first_name %></td>
+    <td><%= user.last_name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.avatar %></td>
+    <td><%= image_tag user.avatar.url(:tiny) %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+
+<% end %>
+</table>
+
+

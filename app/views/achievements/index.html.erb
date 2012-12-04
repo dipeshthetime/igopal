@@ -4,8 +4,8 @@
  <input hidden id = "pid" value= "<%=current_user.portfolio.id %>"/></input>
       <% end %>
     </h1></div>
-<%= link_to 'Add a New Achievement', new_achievement_path %>
-<h3>Listing achievements</h3>
+<center><button class="btn btn-large btn-block" type="button"><%= link_to 'Add a New Achievement', new_achievement_path %></button></center>
+<h2>Listing achievements</h2>
 
 <% @achievements.each do |achievement|if achievement.portfolio.user_id == current_user.id %>
 <div class="achievement">
@@ -30,12 +30,19 @@
 
     <div class="meta">
       <%= link_to time_ago_in_words(achievement.created_at) + " ago", achievement %>  
+
 <%if current_user.id = achievement.portfolio.user_id%>
         <span class="options" :visible = false>      
       <p><%= link_to 'Show', achievement %> | <%= link_to 'Edit', edit_achievement_path(achievement) %> | 
         <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure you want to delete this entry?' } %>
-      </p>
 
+        <span class="options" :visible = false>
+        <div class="btn-group">      
+      <p><button class="btn"><%= link_to 'Show', achievement %></button> <button class="btn"><%= link_to 'Edit', edit_achievement_path(achievement) %></button> <button class="btn"> 
+        <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure you want to delete this entry?' } %></button>
+
+      </p>
+       </div> 
       </span>
 <%end%>
     </div>

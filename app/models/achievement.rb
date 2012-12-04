@@ -5,6 +5,13 @@ class Achievement < ActiveRecord::Base
   :work_file_name, :work_content_type, :work_file_size, :work_updated_at,
   :user_id, :portfolio_id, :portfolio, :user
   
-  has_attached_file :work, :dependent => :destroy
+  
+   has_attached_file :work,
+    :storage => :dropbox,
+    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+    :dropbox_options => {
+      :path => proc { |style| "#{style}/#{id}_#{work.original_filename}"}
+    }                               
+
 
 end
