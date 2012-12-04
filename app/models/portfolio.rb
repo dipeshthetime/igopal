@@ -9,7 +9,7 @@ class Portfolio < ActiveRecord::Base
   	
   has_attached_file :image,
     :storage => :dropbox,
-    :styles {
+    :styles => {
                                   :tiny=> "30x30",
                                   :thumb => "100x100",
                                   :small  => "150x150>",
@@ -19,6 +19,7 @@ class Portfolio < ActiveRecord::Base
     :dropbox_options => {
       :path => proc { |style| "#{style}/#{id}_#{image.original_filename}"}
     }
+
 def init
   self.variety ||='default'
 end

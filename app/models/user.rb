@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
 
   has_attached_file :avatar,
     :storage => :dropbox,
-    :styles {
+    :styles => {
                                   :tiny=> "30x30",
                                   :thumb => "100x100",
                                   :small  => "150x150>",

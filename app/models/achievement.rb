@@ -8,7 +8,7 @@ class Achievement < ActiveRecord::Base
   
    has_attached_file :work,
     :storage => :dropbox,
-    :styles {
+    :styles => {
                                   :tiny=> "30x30",
                                   :thumb => "100x100",
                                   :small  => "150x150",
