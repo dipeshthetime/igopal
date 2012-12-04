@@ -1,15 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<h2> Student Detail </h2>
+<% if current_user.avatar.url %>
 <%= image_tag @user.avatar.url(:thumb) %>
-<p>
-  <b>Login name:</b>
-  <%= @user.login_name %>
-</p>
+<% end %>
 
-<p>
-  <b>Email:</b>
-  <%=@user.email %>
-</p>
+
 
 <p>
   <b>First name:</b>
@@ -20,10 +15,19 @@
   <b>Last name:</b>
   <%= @user.last_name %>
 </p>
+<p>
+  <b>Email:</b>
+  <%=@user.email %>
+</p>
+<p>
+  <b>Login name:</b>
+  <%= @user.login_name %>
+</p>
+
 <!-- Will hide ID later!! -->
 <p>
-  <b>User ID:</b>
-  <%= @user.id %>
+  <b>User Portfolio:</b>
+  <%= link_to "My Achievements", achievements_path %>
 </p>
 
 <p>

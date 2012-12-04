@@ -30,18 +30,22 @@
 
     <div class="meta">
       <%= link_to time_ago_in_words(achievement.created_at) + " ago", achievement %>  
-
+<%if current_user.id = achievement.portfolio.user_id%>
         <span class="options" :visible = false>      
       <p><%= link_to 'Show', achievement %> | <%= link_to 'Edit', edit_achievement_path(achievement) %> | 
         <%= link_to 'Destroy', achievement, method: :delete, data: { confirm: 'Are you sure you want to delete this entry?' } %>
       </p>
 
       </span>
+<%end%>
     </div>
   </div>
   <% end %>
 <% end %>
 <br/>
-
+<%if current_user.id = achievement.portfolio.user_id%>
 <%= link_to 'New Achievement', new_achievement_path %></br>
-<%= link_to 'Edit This Porflolio', edit_portfolio_path(current_user.portfolio) %>
+<%= link_to 'Edit This Porflolio Cover Page', edit_portfolio_path(current_user.portfolio) %>
+<%end%>
+
+

@@ -13,6 +13,8 @@ Igopal::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+
+
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   authenticated :users do
@@ -26,21 +28,25 @@ Igopal::Application.routes.draw do
 
   root :to => "home#index"
 
-  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
+resources :users
 
+
+
+
+  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' 
+  end
   resources :organizations
   resource :portfolio
   resources :portfolios do 
     resources :achievements
   end
-
+resources :organizations do 
+  resources :users
+end
 
   resources :portfolios do
     resources :achievements
   end
-
-
-
   resources :achievements
 # I added this to tie dependent resources together.  
 # Not sure if this is correct

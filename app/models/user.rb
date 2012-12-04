@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_merit
 
   has_and_belongs_to_many :roles
-
+has_many :users, :through => :roles
     include PublicActivity::Model
   tracked
   
@@ -16,17 +16,17 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :id, :role_ids, :avatar
+
   has_one :portfolio, :dependent => :destroy, :inverse_of => :user
   has_one :organization
   has_many :achievements, :through => :portfolio , :include => :achievements
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :id, :role_ids, :avatar
   validates_presence_of :email, :first_name, :last_name, :login_name
   #has_one :organization
 
   attr_accessible :email, :first_name, :last_name, :login_name, :avatar, :role
 
   has_attached_file :avatar,  :dependent => :destroy
-
 
 
 
