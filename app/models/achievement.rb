@@ -8,13 +8,6 @@ class Achievement < ActiveRecord::Base
   
    has_attached_file :work,
     :storage => :dropbox,
-    :styles => {
-                                  :tiny=> "30x30",
-                                  :thumb => "100x100",
-                                  :small  => "150x150",
-                                  :medium => "300x300",
-                                  :cover =>   "851x315"
-                                  },
     :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
     :dropbox_options => {
       :path => proc { |style| "#{style}/#{id}_#{work.original_filename}"}
