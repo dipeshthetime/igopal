@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   # GET /users.json
 before_filter :authenticate_user!
 
+load_and_authorize_resource
+
 def create
   @user = User.create( params[:user] )
 end

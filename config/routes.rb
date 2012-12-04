@@ -13,6 +13,7 @@ Igopal::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+resources :users
 
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -29,7 +30,6 @@ Igopal::Application.routes.draw do
   root :to => "home#index"
 
 
-#resources :users
 
 
 

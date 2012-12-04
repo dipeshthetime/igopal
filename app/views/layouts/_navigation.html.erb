@@ -16,17 +16,18 @@
     <%=link_to "Students", users_path %>
     </li>
   <% else %> 
-
+    <li>
+      <%=link_to "Organizations", organizations_path %>
+    </li>
 
 
 <%if current_user.portfolio%>
 		<li>
 		<%=link_to "My Achievements", achievements_path %>
-		</li>
+		</li>  
   <% end %>
   <% end %>
-    <li>
-    </li>
+ 
     
     <li>
     <%= link_to 'Edit account', edit_user_registration_path %>

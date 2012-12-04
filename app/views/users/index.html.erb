@@ -1,6 +1,6 @@
-<h1>Listing Students</h1>
+<center><h2>Students</h2></center>
 
-<table>
+<table class="table">
   <tr>
     <th  >First name</th>
     <th  >Last name</th>
@@ -9,14 +9,14 @@
   </tr>
 
 <% @users.each do |user| %>
-
+  <% if user.role_ids == [1] %>
   <tr>
     <td><%= user.first_name %></td>
     <td><%= user.last_name %></td>
     <td><%= user.email %></td>
     <td><%= link_to 'Detail',  user %> </td>
   </tr>
-
+  <% end %>
 <% end %>
 </table>
 
