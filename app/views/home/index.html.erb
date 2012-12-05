@@ -9,7 +9,7 @@
   <% if user_signed_in? %>
 <center><h3><%= current_user.first_name %> <%= current_user.last_name %></h3></center>
 <center><p>User ID: <%= current_user.id %></p></center>
-
+<%= image_tag current_user.avatar.url(:medium) %>
 <% if current_user.role_ids == [1] %>
 <center><p>User Role: Student</p></center>
 <% else %>
@@ -29,9 +29,9 @@
         <% if current_user.organization %>
           <li><%= link_to 'My Organization', current_user.organization %></li>
           </li>
-        <%else%>
+        <% else %>
           <li><%= link_to "Create Organization Page", new_organization_path %> </li>
-        <%end%>
+        <% end %>
      <% else %> 
 
 
